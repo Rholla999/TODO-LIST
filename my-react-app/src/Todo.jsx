@@ -23,7 +23,9 @@ function Todo() {
             <h2>To Do List</h2>
             <ul>
                 {list.map((item, index) =>(
-                <li key={index} onClick={() =>removeItem(index)}> {item} </li>
+                <li key={index}> {item} 
+                <button onClick={() => removeItem(index)} className='delBtn'>x</button>
+                </li>
                 ))}
             </ul>
             <input type="text" placeholder='things to do' id='addList' />

@@ -23,7 +23,8 @@ body {
 }
 
 .container li {
-  font-size: 20px;
+  font-size: 30px;
+  margin-bottom: .5em;
 }
 
 input[type="text"] {
@@ -41,4 +42,27 @@ input[type="text"] {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+ul {
+  position: relative;
+}
+
+.container ul li .delBtn {
+  background: transparent;
+  color: red;
+  height: 35px;
+  width: 40px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+}
+
+
+.container ul li .delBtn:hover {
+  background: red;
+  color: #fff;
+  border: none;
 }
