@@ -17,6 +17,11 @@ function Todo() {
         setList(list.filter((_, i) => i !== index))
     }
 
+    function handleEnterKey(e){
+        if (e.key === "Enter"){
+            addBtn()
+        }
+    }
     return (
         <>
         <div className='container'>
@@ -28,8 +33,8 @@ function Todo() {
                 </li>
                 ))}
             </ul>
-            <input type="text" placeholder='things to do' id='addList' />
-            <button onClick={addBtn}>ADD</button>
+            <input type="text" placeholder='things to do' id='addList'  onKeyDown={handleEnterKey}/>
+            <button onClick={addBtn} className='addBtn'>ADD</button>
         </div>
         </>
     )

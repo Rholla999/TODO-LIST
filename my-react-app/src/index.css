@@ -66,3 +66,19 @@ ul {
   color: #fff;
   border: none;
 }
+
+.container  .addBtn {
+  background: #25e225;
+  color: #fff;
+  font-weight: bold;
+}
+
+.container  .addBtn:hover {
+  background: #25e225b9;
+}
+
+
+#addList {
+  text-align: center;
+  text-transform: capitalize;
+}
