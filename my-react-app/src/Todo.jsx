@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FaTrashAlt } from "react-icons/fa"
 
 function Todo() {
 
@@ -29,7 +30,8 @@ function Todo() {
             <ul>
                 {list.map((item, index) =>(
                 <li key={index}> {item} 
-                <button onClick={() => removeItem(index)} className='delBtn'>x</button>
+                {/* <button onClick={() => removeItem(index)} className='delBtn'>x</button> */}
+                <FaTrashAlt role='button' tabIndex= '0' className='delBtn' onClick={() => removeItem(index)}/>
                 </li>
                 ))}
             </ul>
