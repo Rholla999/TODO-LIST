@@ -29,13 +29,15 @@ function Todo() {
             <h2>To Do List</h2>
             <ul>
                 {list.map((item, index) =>(
-                <li key={index}> {item} 
+                <li key={index} className='list'> 
+                <input type="checkbox"  />
+                {item} 
                 {/* <button onClick={() => removeItem(index)} className='delBtn'>x</button> */}
                 <FaTrashAlt role='button' tabIndex= '0' className='delBtn' onClick={() => removeItem(index)}/>
                 </li>
                 ))}
             </ul>
-            <input type="text" placeholder='things to do' id='addList'  onKeyDown={handleEnterKey}/>
+            <input type="text" placeholder='task' id='addList'  onKeyDown={handleEnterKey}/>
             <button onClick={addBtn} className='addBtn'>ADD</button>
         </div>
         </>
