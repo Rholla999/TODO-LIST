@@ -126,3 +126,26 @@ ul {
   margin-right: 1em;
   accent-color: green;
 }
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+.searchLabel {
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.searchLabel .search {
+  width: 50%;
+  padding: min(.1em, 10px);
+  margin: 10px 0;
+  font-size: 20px;
+  outline: none;
+  text-align: center;
+  text-transform: capitalize;
+}

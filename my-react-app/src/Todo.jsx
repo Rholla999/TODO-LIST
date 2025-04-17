@@ -14,6 +14,7 @@ function Todo() {
     }
 
     const [list, setList] = useState(getStoredData());
+    const [search, setSearch]  = useState('')
     const inputRef = useRef(null)
 
 
@@ -61,12 +62,26 @@ function Todo() {
             addBtn()
         }
     }
+
+   
+    const filteredTask = list.filter((item) => item.text.toLowerCase().includes(search.toLowerCase()));
+
     return (
         <>
         <div className='container'>
             <h2>To Do List</h2>
+           <form onSubmit={(e) => e.preventDefault()}>
+            <label className='searchLabel'>
+                search:
+                <input type="text" placeholder='search' className='search' 
+                value={search}
+                onChange={(e) => setSearch(e.target.value)} />
+                
+            </label>
+           </form>
+            {filteredTask.length === 0 && <h4 className='empty'>No tasks available</h4>}   
             <ul>
-                {list.map((item, index) =>(
+                {filteredTask.map((item, index) =>(
                 <li key={index} className='list'> 
                 <input 
                 type="checkbox"
@@ -87,8 +102,14 @@ function Todo() {
                 </li>
                 ))}
             </ul>
+            
             <input type="text" placeholder='task' ref={inputRef}  onKeyDown={handleEnterKey}/>
             <button onClick={addBtn} className='addBtn'>ADD</button>
+            <div className='footer'>
+                <span style={{display: filteredTask.length === 0 ? 'none' : 'block'}}>
+                <p>{filteredTask.length} task {filteredTask.length <= 1 ? 'list' : 'lists'}</p>
+                </span>
+            </div>
         </div>
         </>
     )
